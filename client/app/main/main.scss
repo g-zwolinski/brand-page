@@ -1,0 +1,437 @@
+$lightest-color: #84B3F6;
+$lighter-color: #5597F6;
+$primary-color: #1E67B5;
+$darker-color: #547DB8;
+$darkest-color: #294977;
+
+body{
+  background-color: white;
+  overflow-x: hidden; 
+  transition:all 400ms;
+}
+
+#languageLabelIE{
+  min-width: 40px;
+}
+
+#menuIE{
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $primary-color;
+  z-index: 100000;
+  transition:all 400ms;
+  overflow: hidden;
+  border-bottom: 1px solid $darkest-color;
+}
+
+#menuIE > a.menuIEButton{
+  height: 100%;
+  width: 16%;
+  padding-top: 10px;
+  float: left;
+}
+
+#menuIE > .menuIELanguage{
+  height: 100%;
+  width:auto;
+  float: right;
+  padding-right: 18px;
+  padding-top: 10px;
+}
+
+#menuIE > img{
+  background-color: $darkest-color;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: left;
+}
+
+.menuIELanguage > span{
+
+}
+
+#menuIE > a{
+  display: inline-block;
+  text-align: center;
+  height: 100%;
+}
+
+#menuIE > a.active{
+  background-color: $darkest-color;
+}
+
+body.md-dialog-is-showing{
+  overflow-y: visible;
+  overflow-x: visible; 
+}
+
+body:not(.md-dialog-is-showing) > .ng-scope > main > #menu{
+  transition:none;
+}
+
+
+body.md-dialog-is-showing > .ng-scope > main > #menu{
+  opacity: 0;
+  transition:all 400ms;
+}
+
+body:not(.md-dialog-is-showing){
+  height: 100%; min-height:100%;
+  overflow-y: visible;
+  overflow-x: hidden; 
+}
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove{
+  transition: all linear 0.5s !important;
+}
+
+
+md-backdrop{
+position: fixed !important;
+}
+
+[animate-on-change]{
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+[animate-on-change].changed{
+  color: rgba(0,0,0,0);
+  border: none;
+  text-shadow: none;
+  transition: none;
+  -webkit-transition: none;
+}
+
+/* initation animation below */
+.animate-if {
+  background:white;
+  border:1px solid black;
+  padding:10px;
+}
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+/* bounc animation below*/
+.animated {
+  -webkit-animation-duration: 2.5s;
+  animation-duration: 2.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-5px);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+a{
+  color: white;
+  transition:all 400ms;
+  text-decoration: none;
+
+}
+
+#animated-arrow{
+
+}
+
+path{
+  border: 1px solid black;
+}
+
+path:hover, path:visited, path:link, path:active, path:focus{
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+a:hover, a:visited, a:link, a:active, a:focus{
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
+
+a:hover, a:focus, a:active{
+  outline: none;
+  color: $lightest-color;
+}
+
+sub{
+  text-shadow: 1px 1px 4px $darker-color;
+}
+
+blockquote{
+  border: none;
+  padding: 0;
+  font-size: 1.3em;
+  letter-spacing: .5px;
+  font-style: italic;
+}
+
+cite{
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-style: normal;
+  font-size: .85em;
+  letter-spacing: 2px;
+}
+
+.text-primary{
+  color: $primary-color;
+}
+
+#arrowContener{
+  padding-top: 30px;
+  width: 30px; 
+  margin: 0 auto;
+}
+
+#introPage{
+  text-align: center;
+  width: 100%;
+  height: 95vh;
+  background-color: white;
+  transition:all 400ms;
+  color: $primary-color;
+  text-align: center;
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url(/assets/images/introBackground.jpg);
+
+    /* Set a specific height */
+    height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section > h1{
+  width: 200%;
+  margin-top: 0;
+  margin-right: -230px;
+  float: right;
+  transition:all 1000ms;
+  text-align: right;
+}
+path.active{
+  fill: #84B3F6 !important;
+  transition:all 900ms;
+}
+section > h1.active{
+  margin-right: 30px;
+  width: 100%;
+}
+
+#introPage > h1{
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.26);
+  padding-top: 20vh;
+  float: none;
+  width: 100%;
+  color: $primary-color;
+  text-align: center;
+  font-size: 20vh;
+}
+
+#introPage > h3{
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.26);
+  float: none;
+  width: 100%;
+  color: $primary-color;
+  text-align: center;
+  margin: 0 0 0 0;
+  font-size: 10vh;
+}
+
+.container{
+  width: 100%;
+  opacity: 0.3;
+  transition:all 900ms;
+}
+
+.container.active{
+  opacity: 1;
+}
+
+.text-muted{
+  color: white;
+}
+
+section{
+  transition:all 400ms;
+}
+
+.lighterSection, .darkerSection{
+  padding-left: 5vw;
+  padding-right: 5vw;
+  min-height: 100vh;
+  padding-top: 33vh;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+.lighterSection{
+  color: white;
+  background: $lighter-color;
+  background: -moz-linear-gradient(left, $lighter-color 0%, $lightest-color 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, $lighter-color), color-stop(100%, $lightest-color));
+  background: -webkit-linear-gradient(left, $lighter-color 0%, $lightest-color 100%);
+  background: -o-linear-gradient(left, $lighter-color 0%, $lightest-color 100%);
+  background: -ms-linear-gradient(left, $lighter-color 0%, $lightest-color 100%);
+  background: linear-gradient(to right, $lighter-color 0%, $lightest-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84B3F6', endColorstr='#5597F6', GradientType=1 );
+
+}
+
+.lighterSection > h1{
+  color: white;
+  text-shadow: 3px 3px 5px $lightest-color;
+  border-bottom: 1px solid $lightest-color;
+}
+
+.darkerSection{
+  background: $darkest-color;
+  background: -moz-linear-gradient(left, $darkest-color 0%, $darker-color 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, $darkest-color), color-stop(100%, $darker-color));
+  background: -webkit-linear-gradient(left, $darkest-color 0%, $darker-color 100%);
+  background: -o-linear-gradient(left, $darkest-color 0%, $darker-color 100%);
+  background: -ms-linear-gradient(left, $darkest-color 0%, $darker-color 100%);
+  background: linear-gradient(to right, $darkest-color 0%, $darker-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#547DB8', endColorstr='#294977', GradientType=1 );
+  color: white;
+}
+
+.bodyGradient{
+  background: $darkest-color;
+  background: -moz-linear-gradient(left, $darkest-color 0%, $darker-color 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, $darkest-color), color-stop(100%, $darker-color));
+  background: -webkit-linear-gradient(left, $darkest-color 0%, $darker-color 100%);
+  background: -o-linear-gradient(left, $darkest-color 0%, $darker-color 100%);
+  background: -ms-linear-gradient(left, $darkest-color 0%, $darker-color 100%);
+  background: linear-gradient(to right, $darkest-color 0%, $darker-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#547DB8', endColorstr='#294977', GradientType=1 );
+}
+
+.darkerSection > h1{
+  color: white;
+  text-shadow: 3px 3px 5px $darker-color;
+  border-bottom: 1px solid $darker-color;
+}
+
+#menu{
+  /*
+  transition:all 500ms !important;
+  */
+}
+
+/*formularze */
+
+#formHeader{
+  margin-bottom: 20px;
+}
+
+.md-button{
+  width: 99%;
+  margin: 0 0 0 0 !important;
+}
+
+.md-button:hover, .md-button.active:hover{
+  background-color: $primary-color;
+}
+
+.md-button.active{
+  background-color: $lightest-color;
+}
+
+#formFirstRow > md-input-container{
+  margin-top: 30px !important;
+}
+
+input{
+  border-bottom: 1px solid $lightest-color;
+}
+
+textarea{
+  /*display: block;*/
+  border-bottom: 1px solid $lightest-color;
+}
+
+#sendButtonContener{
+  width: 100%;
+  text-align: right;
+}
+
+.md-button.md-fab{
+  background-color: $lightest-color !important;
+}
+
+.md-button.md-fab:hover{
+  background-color: $primary-color !important;
+}
+
+
+.md-fab > i{
+  margin-top: 15px;
+  margin-left: 2px;
+}
+
+.md-on{
+  background-color: $lightest-color;
+}
+
+#price{
+  padding-top: 36px;
+  float: left;
+}
+
+#complexityLevelChecker{
+  padding-top: 15px;
+}
+
+md-dialog{
+  color: white;
+  background-color: $lightest-color;
+}

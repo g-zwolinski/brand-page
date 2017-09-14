@@ -1,0 +1,55 @@
+$lightest-color: #84B3F6;
+$lighter-color: #5597F6;
+$primary-color: #1E67B5;
+$darker-color: #547DB8;
+$darkest-color: #294977;
+
+.spinImage {
+    -webkit-animation:spin 16s linear infinite;
+    -moz-animation:spin 16s linear infinite;
+    animation:spin 16s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.footer {
+  color: white;
+  background-color: $primary-color;
+  height: 120px;
+  border-top: 1px solid $darkest-color; 
+}
+
+.footer > div {
+	height: 100%;
+}
+
+.footerLeftCol {
+	padding-top: 20px;
+	text-align: center
+}
+
+.footeMidrCol{
+ 	white-space: nowrap;
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.footeMidrCol > a {
+	padding-left: 2vw;
+	padding-right: 0px;
+	float:left;
+}
+
+.footerRightCol > a {
+	padding-left: 0px;
+	padding-right: 2vw;
+	float:right;
+	text-align: right;
+}
+
+.footerRightCol{
+	padding-top: 20px;
+	padding-right: 0px;
+}

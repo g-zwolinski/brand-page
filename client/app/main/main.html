@@ -1,0 +1,154 @@
+<div ng-show="!notIE && !firstTime" id="menuIE" class="animate-show-hide">
+    <img ng-src="assets/images/logo.png" height="40px" width="auto" ng-show="!notIE">
+    <a href="#0" id="menuIEBtn0" class="menuIEButton" du-smooth-scroll animate-on-change="language">{{language=='PL'?'O nas':'About'}}</a>
+    <a href="#1" id="menuIEBtn1" class="menuIEButton" du-smooth-scroll animate-on-change="language">{{language=='PL'?'Oferta':'Offer'}}</a>
+    <a href="#2" id="menuIEBtn2" class="menuIEButton" du-smooth-scroll animate-on-change="language">{{language=='PL'?'Więcej':'Details'}}</a>
+    <a href="#3" id="menuIEBtn3" class="menuIEButton" du-smooth-scroll animate-on-change="language">{{language=='PL'?'Kontakt':'Contact'}}</a>
+    <a class="menuIELanguage" ng-click="toggleLanguage()">
+      <span id="languageLabelIE" animate-on-change="language">{{language=='PL'?'ENG':'PL'}}</span>
+    </a>
+</div>
+
+<div drag-circular-menu angle="24" placement="topLeft" button-config="menuConfig" menu-items="menuItems" default-open="false" onwing-click="onWingClick1(wing)" id="menu" ng-show="showMenuBoolean && notIE" ng-init="showMenuBoolean = true" class="animate-show-hide">
+</div>
+<section id="introPage" class="parallax fade" ng-click="scrollTo(0)" ng-class="{ in: ngLoaded }">
+    <h1>Yskier</h1>
+    <h3>flower of the flock</h3>
+    <sub>scroll for more</sub>
+    <div id="arrowContener">
+        <div id="animated-arrow" class="animated bounce">
+            <i class="material-icons">arrow_drop_down_circle</i>
+        </div>
+    </div>
+</section>
+<section id="0" class="lighterSection" du-spy-context>
+    <h1 du-scrollspy="0" animate-on-change="language">{{language == 'PL'?'O nas':'About'}}</h1>
+
+    <div du-scrollspy="0" du-spy-context class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+            </span>
+                <h4 class="service-heading">E-Commerce</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+            </span>
+                <h4 class="service-heading">Responsive Design</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+            </span>
+                <h4 class="service-heading">Web Security</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="1" class="darkerSection" du-spy-context>
+    <h1 du-scrollspy="1">Offer</h1>
+    <div class="container" du-scrollspy="1" du-spy-context>
+        <div class="row">
+            <div class="col-md-4">
+                <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    <cite>by Henry Hill</cite>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum sunt inventore fugit porro, totam, asperiores reprehenderit quibusdam a architecto impedit possimus temporibus. Eaque velit eligendi non doloribus, veritatis, doloremque at!</p>
+            </div>
+            <div class="col-md-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum sunt inventore fugit porro, totam, asperiores reprehenderit quibusdam a architecto impedit possimus temporibus. Eaque velit eligendi non doloribus, veritatis, doloremque at!</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section id="2" class="lighterSection" du-spy-context>
+    <h1 du-scrollspy="2">Details</h1>
+</section>
+<section id="3" class="darkerSection" du-spy-context>
+    <h1 du-scrollspy="3">Contact</h1>
+    <div class="container" du-scrollspy="3" du-spy-context>
+        <div id="formHeader">
+            <div class="col-xs-6">
+                <md-button ng-click="contactForm.formToShow = 'job'" ng-init="contactForm.formToShow = 'job'" class="md-raised {{contactForm.formToShow == 'job'?'active':''}}">
+                    Job
+                </md-button>
+            </div>
+            <div class="col-xs-6">
+                <md-button ng-click="contactForm.formToShow = 'message'" class="md-raised {{contactForm.formToShow == 'message'?'active':''}}">
+                    Message
+                </md-button>
+            </div>
+        </div>
+        <form name="contactFormMarkup" ng-submit="submitForm()" animate-on-change="contactForm.formToShow">
+            <div id="formFirstRow">
+                <md-input-container class="col-xs-6 md-block" flex-gt-sm>
+                    <label>Name</label>
+                    <input ng-model="contactForm.authorName" required name="authorName" ng-focus="hideMenu()" ng-blur="showMenu('formFirstRow')">
+                    <div ng-messages="contactFormMarkup.authorName.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="col-xs-6 md-block" flex-gt-sm>
+                    <label>Contact</label>
+                    <input ng-model="contactForm.authorContact" required name="authorContact" ng-focus="hideMenu()" ng-blur="showMenu('formFirstRow')">
+                    <div ng-messages="contactFormMarkup.authorContact.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div ng-show="contactForm.formToShow == 'job'">
+                <div>
+                    <label>Type *</label>
+                    <md-radio-group ng-model="contactForm.selectedJobType" class="col-xs-12" required name="selectedJobType">
+                        <md-radio-button ng-repeat="jobType in jobTypes track by $index" value="{{$index}}" class="md-primary col-xs-12 col-sm-4 col-md-3">{{jobType.name}} {{$index}}</md-radio-button>
+                    </md-radio-group>
+                </div>
+                <div>
+                    <label>Complexity *</label>
+                    <div animate-on-change="contactForm.selectedJobType">
+                        {{jobTypes[contactForm.selectedJobType].description}}
+                    </div>
+                    <div id="complexityLevelChecker">
+                        <md-radio-group ng-model="contactForm.complexity" class="col-xs-12" required name="complexity">
+                            <md-radio-button value="priceEasy" class="md-primary col-xs-12 col-sm-4">prostszy</md-radio-button>
+                            <md-radio-button value="priceNormal" class="md-primary col-xs-12 col-sm-4">taki sam</md-radio-button>
+                            <md-radio-button value="priceHard" class="md-primary col-xs-12 col-sm-4">trudniejszy</md-radio-button>
+                        </md-radio-group>
+                    </div>
+                </div>
+            </div>
+            <md-input-container class="col-xs-12" id="mainMessage">
+                <label>{{contactForm.formToShow == 'job'?'Description':'Message content'}}</label>
+                <textarea ng-model="contactForm.mainMessage[contactForm.formToShow]" rows="1" required name="description" ng-focus="hideMenu()" ng-blur="showMenu('mainMessage')"></textarea>
+                <div ng-messages="contactFormMarkup.description.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+            <div id="sendButtonContener">
+                <div ng-show="contactForm.formToShow == 'job' && contactForm.complexity" id="price">
+                    <span animate-on-change="contactForm.selectedJobType" animate-on-change-additional="contactForm.complexity" id="priceContener">
+            Suggested price: {{jobTypes[contactForm.selectedJobType][contactForm.complexity]}} PLN
+          </span>
+                </div>
+                <md-button class="md-raised md-fab" aria-label="Send" type="submit">
+                    <i class="material-icons">send</i>
+                </md-button>
+            </div>
+        </form>
+    </div>
+</section>
